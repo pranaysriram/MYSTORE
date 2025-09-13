@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',        // MySQL username
-  password: 'root', // 👈 put your MySQL root password
+  host: 'mystore-db.render.com',
+  user: 'mystoreuser',    // 👈 Replace with your actual username
+  password: 'gbhN9B5JyJVe12WLyDvjXy0ETg5jG9Ao', // 👈 Replace with your actual password
   database: 'mystore'
 });
 
