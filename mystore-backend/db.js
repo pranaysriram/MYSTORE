@@ -1,7 +1,7 @@
 const { Pool } = require('pg');
 
 const db = new Pool({
-  connectionString: 'postgres://mystoreuser:gbhN985JyJVe12WLvdyJxy8ETG5Jg9Ao@dpg-d32ppk0d3ps738b0820-a/mystore_oyzk'
+  connectionString: process.env.DATABASE_URL
 });
 
 db.connect((err) => {
