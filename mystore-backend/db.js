@@ -1,15 +1,15 @@
-const mysql = require('mysql2');
+const { Pool } = require('pg');
 
-const db = mysql.createConnection({
-  host: 'mystore-db.render.com',
-  user: 'mystoreuser',    // 👈 Replace with your actual username
-  password: 'gbhN9B5JyJVe12WLyDvjXy0ETg5jG9Ao', // 👈 Replace with your actual password
-  database: 'mystore'
+const db = new Pool({
+  connectionString: 'postgres://mystoreuser:gbhN985JyJVe12WLvdyJxy8ETG5Jg9Ao@dpg-d32ppk0d3ps738b0820-a/mystore_oyzk'
 });
 
 db.connect((err) => {
-  if (err) throw err;
-  console.log("✅ MySQL Connected...");
+  if (err) {
+    console.error('Database connection error:', err);
+    throw err;
+  }
+  console.log("✅ PostgreSQL Connected...");
 });
 
 module.exports = db;
